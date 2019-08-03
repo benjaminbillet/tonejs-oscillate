@@ -1,0 +1,19 @@
+
+.equalizer {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+
+.slider {
+  color: #40bfff;
+}
+
+.markLabelActive, .markLabel  {
+  color: #c7c7c7;
+}
+
+.hiddenThumb {
+  display: none;
+}
