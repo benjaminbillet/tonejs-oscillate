@@ -18,7 +18,7 @@ class OscillatorPicker extends PureComponent {
 
   handleChange = (event) => {
     const { oscillator } = this.props;
-    oscillator.setType(event.target.value);
+    oscillator.setOscillatorType(event.target.value);
   }
 
   renderOptions = (options) => {
@@ -38,10 +38,10 @@ class OscillatorPicker extends PureComponent {
       <FormControl>
         <RadioGroup
           onChange={this.handleChange}
-          value={oscillator.type}
+          value={oscillator.oscillatorType}
           className={styles.oscillatorPicker}
         >
-          {this.renderOptions(['Sine', 'Square', 'Sawtooth', 'Triangle', 'Custom'])}
+          {this.renderOptions(['Basic', 'AM', 'FM', 'Fat'])}
         </RadioGroup>
       </FormControl>
     );

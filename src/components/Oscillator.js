@@ -3,7 +3,13 @@ import Tone from 'tone';
 
 export default class Oscillator {
   @observable
-  type = 'sine';
+  carrierType = 'sine';
+
+  @observable
+  oscillatorType = 'basic';
+
+  @observable
+  modulationType = 'square';
 
   @observable
   partials = [];
@@ -11,12 +17,24 @@ export default class Oscillator {
   @observable
   frequency = 440;
 
+  @observable
+  harmonicity = 1;
+
+  @observable
+  modulationIndex = 2;
+
+  @observable
+  spread = 20;
+
+  @observable
+  count = 3;
+
   constructor() {
-    this.oscillator = new Tone.Oscillator({
-      type: this.type,
+    this.oscillator = new Tone.OmniOscillator({
+      type: this.getInternalType(),
       frequency: this.frequency,
     }).toMaster();
-    this.partials = this.oscillator.partials;
+    this.resetOscillator();
   }
 
   start() {
@@ -28,10 +46,23 @@ export default class Oscillator {
   }
 
   @action
-  setType(type) {
-    this.oscillator.type = type;
-    this.type = type;
+  setCarrierType(type) {
+    this.carrierType = type;
+    this.oscillator.type = this.getInternalType();
     this.partials = this.oscillator.partials;
+  }
+
+  @action
+  setOscillatorType(type) {
+    this.oscillatorType = type;
+    this.resetOscillator();
+  }
+
+  @action
+  setModulationType(type) {
+    this.modulationType = type;
+    this.oscillator.modulationType = type;
+    this.resetOscillator();
   }
 
   @action
@@ -43,9 +74,51 @@ export default class Oscillator {
   }
 
   @action
+  setHarmonicity(harmonicity) {
+    this.oscillator.harmonicity.value = harmonicity;
+    this.resetOscillator();
+  }
+
+  @action
+  setModulationIndex(modulationIndex) {
+    this.oscillator.modulationIndex.value = modulationIndex;
+    this.resetOscillator();
+  }
+
+  @action
+  setSpread(spread) {
+    this.oscillator.spread = spread;
+    this.resetOscillator();
+  }
+
+  @action
+  setCount(count) {
+    this.oscillator.count = count;
+    this.resetOscillator();
+  }
+
+  @action
   setFrequency(frequency) {
     this.oscillator.frequency = frequency;
     this.frequency = frequency;
+  }
+
+  resetOscillator() {
+    this.oscillator.type = this.getInternalType();
+    this.partials = this.oscillator.partials;
+    this.harmonicity = (this.oscillator.harmonicity || { value: this.harmonicity }).value;
+    this.modulationIndex = (this.oscillator.modulationIndex || { value: this.modulationIndex }).value;
+    this.spread = this.oscillator.spread || this.spread;
+    this.count = this.oscillator.count || this.count;
+    this.frequency = this.oscillator.frequency || this.frequency;
+  }
+
+  getInternalType() {
+    let type = this.carrierType;
+    if (this.oscillatorType !== 'basic') {
+      type = this.oscillatorType + type;
+    }
+    return type;
   }
 
   getWrapped() {

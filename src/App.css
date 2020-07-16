@@ -11,7 +11,6 @@ body {
 
 .container {
   width: 550px;
-  height: 350px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -27,7 +26,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 
 .wavyBackground {
   width: 100%;

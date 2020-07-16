@@ -5,7 +5,8 @@
   "scripts": {
     "execute": "babel-node",
     "transpile": "babel . --ignore ./node_modules,./generated --out-dir ./generated",
-    "dev": "parcel --global App"
+    "dev": "parcel --global App",
+    "lint": "eslint src/**"
   },
   "devDependencies": {
     "@babel/cli": "7.4.3",
@@ -32,6 +33,7 @@
     "mobx-react": "6.1.1",
     "prop-types": "15.7.2",
     "react": "16.8.6",
+    "react-circle-slider": "benjaminbillet/react-circle-slider",
     "react-dom": "16.8.6",
     "tone": "13.4.9"
   }

@@ -6,7 +6,7 @@ import styles from './App.css';
 import MiniOscilloscope from './components/MiniOscilloscope';
 import Oscillator from './components/Oscillator';
 import PlayPauseButton from './components/PlayPauseButton';
-import PartialEqualizer from './components/PartialEqualizer';
+import OscillatorControls from './components/OscillatorControls';
 import OscillatorPicker from './components/OscillatorPicker';
 
 class WavyBackground extends PureComponent {
@@ -29,8 +29,8 @@ export default class App extends PureComponent {
           <div className={styles.content}>
             <PlayPauseButton source={this.oscillator} />
             <OscillatorPicker oscillator={this.oscillator} />
-            <PartialEqualizer oscillator={this.oscillator} size={16} />
             <MiniOscilloscope oscillator={this.oscillator} />
+            <OscillatorControls oscillator={this.oscillator} />
           </div>
         </div>
       </StylesProvider>

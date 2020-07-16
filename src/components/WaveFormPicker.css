@@ -1,0 +1,20 @@
+.waveFormContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveFormLegend {
+  color: #ccc;
+  padding-right: 10px;
+}
+
+.waveFormPicker {
+  color: #ccc;
+  flex-direction: row;
+}
+
+.radioButton {
+  color: #fff;
+}
