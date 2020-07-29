@@ -10,18 +10,27 @@ class CircleSlider extends PureComponent {
     legend: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,
     legendClassName: PropTypes.string.isRequired,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    stepSize: PropTypes.number,
+  };
+
+  static defaultProps = {
+    min: 0,
+    max: 100,
+    stepSize: 1,
   };
 
   render() {
-    const { value, onChange, legend, className, legendClassName } = this.props;
+    const { value, onChange, legend, className, legendClassName, min, max, stepSize } = this.props;
     return (
       <div className={className}>
         <Slider
           value={value}
           size={150}
-          min={0.3}
-          max={5}
-          stepSize={0.1}
+          min={min}
+          max={max}
+          stepSize={stepSize}
           knobRadius={10}
           progressWidth={5}
           circleWidth={5}

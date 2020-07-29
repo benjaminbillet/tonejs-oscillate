@@ -23,6 +23,8 @@ class FatControls extends PureComponent {
           className={styles.controlItem}
           legendClassName={styles.controlItem}
           legend="Spread"
+          min={0}
+          max={40}
         />
         <CircleSlider
           value={oscillator.count}
@@ -30,6 +32,8 @@ class FatControls extends PureComponent {
           className={styles.controlItem}
           legendClassName={styles.controlItem}
           legend="Count"
+          min={1}
+          max={10}
         />
       </div>
     );

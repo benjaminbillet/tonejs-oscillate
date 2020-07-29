@@ -33,6 +33,7 @@ export default class Oscillator {
     this.oscillator = new Tone.OmniOscillator({
       type: this.getInternalType(),
       frequency: this.frequency,
+      volume: -26,
     }).toMaster();
     this.resetOscillator();
   }
@@ -75,24 +76,36 @@ export default class Oscillator {
 
   @action
   setHarmonicity(harmonicity) {
+    if (this.oscillator.harmonicity.value === harmonicity) {
+      return;
+    }
     this.oscillator.harmonicity.value = harmonicity;
     this.resetOscillator();
   }
 
   @action
   setModulationIndex(modulationIndex) {
+    if (this.oscillator.modulationIndex.value === modulationIndex) {
+      return;
+    }
     this.oscillator.modulationIndex.value = modulationIndex;
     this.resetOscillator();
   }
 
   @action
   setSpread(spread) {
+    if (this.oscillator.spread === spread) {
+      return;
+    }
     this.oscillator.spread = spread;
     this.resetOscillator();
   }
 
   @action
   setCount(count) {
+    if (this.oscillator.count === count) {
+      return;
+    }
     this.oscillator.count = count;
     this.resetOscillator();
   }
@@ -103,6 +116,7 @@ export default class Oscillator {
     this.frequency = frequency;
   }
 
+  @action
   resetOscillator() {
     this.oscillator.type = this.getInternalType();
     this.partials = this.oscillator.partials;

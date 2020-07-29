@@ -23,10 +23,13 @@ class AMControls extends PureComponent {
         <div className={styles.controlsContainer}>
           <CircleSlider
             value={oscillator.harmonicity}
-            onChange={value => oscillator.setHarmonicity(value.toFixed(1))}
+            onChange={value => oscillator.setHarmonicity(parseFloat(value.toFixed(1)))}
             className={styles.controlItem}
             legendClassName={styles.controlItem}
             legend="Harmonicity"
+            min={0.3}
+            max={5}
+            stepSize={0.1}
           />
         </div>
       </FormControl>

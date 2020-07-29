@@ -23,17 +23,23 @@ class FMControls extends PureComponent {
         <div className={styles.controlsContainer}>
           <CircleSlider
             value={oscillator.harmonicity}
-            onChange={value => oscillator.setHarmonicity(value.toFixed(1))}
+            onChange={value => oscillator.setHarmonicity(parseFloat(value.toFixed(1)))}
             className={styles.controlItem}
             legendClassName={styles.controlItem}
             legend="Harmonicity"
+            min={0.3}
+            max={5}
+            stepSize={0.1}
           />
           <CircleSlider
             value={oscillator.modulationIndex}
-            onChange={value => oscillator.setModulationIndex(value)}
+            onChange={value => oscillator.setModulationIndex(parseFloat(value.toFixed(1)))}
             className={styles.controlItem}
             legendClassName={styles.controlItem}
             legend="Modulation Index"
+            min={0}
+            max={5}
+            stepSize={0.1}
           />
         </div>
       </FormControl>
