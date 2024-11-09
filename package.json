@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "check": "tsc --noEmit",
     "dev": "parcel src/index.html",
     "lint": "prettier src --check . --ignore-path .prettierignore",
-    "lint:fix": "prettier src --check . --ignore-path .prettierignore --write"
+    "lint:fix": "prettier src --check . --ignore-path .prettierignore --write",
+    "type:check": "tsc --skipLibCheck --noEmit"
   },
   "dependencies": {
+    "antd": "^5.21.6",
     "clsx": "^2.1.1",
     "jotai": "^2.10.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-select": "^5.8.2",
     "tone": "^15.0.4"
   },
   "devDependencies": {

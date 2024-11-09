@@ -1,0 +1,17 @@
+.waveFormContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveFormLegend {
+  padding-right: 10px;
+  font-variant: small-caps;
+  font-weight: 500;
+}
+
+.waveFormPicker {
+  color: var(--text-color);
+  flex-direction: row;
+}

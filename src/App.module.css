@@ -1,10 +1,10 @@
 .container {
-  width: 550px;
+  width: 600px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--background-color-dark);
+  background: var(--background-color-darker);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 20px 0px #111f;
@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 1rem;
 }
 
 .wavyBackground {

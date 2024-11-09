@@ -1,0 +1,24 @@
+.rail {
+  stroke-width: 5;
+  stroke: #fff;
+  fill: none;
+}
+
+.handle {
+  fill: #fff;
+  cursor: pointer;
+}
+
+.track {
+  stroke-linecap: round;
+  stroke-width: 6;
+  stroke: #b4006f;
+  fill: none;
+}
+
+.label {
+  font-size: 32;
+  fill: #fff;
+  text-anchor: middle;
+  dominant-baseline: central;
+}

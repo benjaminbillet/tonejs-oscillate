@@ -1,0 +1,17 @@
+.controlsContainer {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.controlItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-variant: small-caps;
+  font-weight: 500;
+}
