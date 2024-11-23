@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAtom } from 'jotai';
 
-import * as oscillatorService from '../domains/oscillator/oscillator.service';
+import { oscillatorService } from '../domains/oscillator/oscillator.service';
 import * as oscillatorState from '../domains/oscillator/oscillator.state';
 import { Slider } from '../ds/Slider';
 import styles from './PartialEqualizer.module.css';

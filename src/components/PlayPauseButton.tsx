@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import * as oscillatorService from '../domains/oscillator/oscillator.service';
+import { oscillatorService } from '../domains/oscillator/oscillator.service';
 import { Button } from '../ds/Button';
 import styles from './PlayPauseButton.module.css';
 

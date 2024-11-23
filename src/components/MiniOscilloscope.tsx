@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { useAtom } from 'jotai';
 
-import * as oscillatorService from '../domains/oscillator/oscillator.service';
+import { oscillatorService } from '../domains/oscillator/oscillator.service';
 import * as oscillatorState from '../domains/oscillator/oscillator.state';
 import { scale } from '../utils/scale';
 import styles from './MiniOscilloscope.module.css';

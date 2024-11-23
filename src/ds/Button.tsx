@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button as AntButton } from 'antd';
 import clsx from 'clsx';
 
 import styles from './Button.module.css';
